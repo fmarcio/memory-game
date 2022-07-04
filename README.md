@@ -1,7 +1,7 @@
 # Memory Game
 
 This project was created intended to practice some react fundamentals. It is part of The Net Ninja (Shaun Pelling) course but with some additional features
-added by myself. In the feature I'm going to update it with some extra features as typescript and unit tests.
+added by myself. In the feature I'm going to update it with some other features as typescript and unit tests.
 
 # Getting Started with Create React App
 
