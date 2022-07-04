@@ -3,6 +3,8 @@
 This project was created intended to practice some react fundamentals. It is part of The Net Ninja (Shaun Pelling) course but with some additional features
 added by myself. In the feature I'm going to update it with some other features as typescript and unit tests.
 
+Project deployed [here](https://merry-truffle-854eb7.netlify.app/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
