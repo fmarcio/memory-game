@@ -1,7 +1,25 @@
 import React from "react";
 import "./SingleCard.css";
 
-export const SingleCard = ({ card, handleChoice, flipped, disabled }) => {
+interface ISingleCardProps {
+  card: Card;
+  disabled: boolean;
+  flipped: boolean;
+  handleChoice: (card: Card) => void;
+}
+
+type Card = {
+  id: number;
+  matched: boolean;
+  src: string;
+};
+
+export const SingleCard: React.FC<ISingleCardProps> = ({
+  card,
+  disabled,
+  flipped,
+  handleChoice,
+}) => {
   const handleClick = () => {
     if (!disabled) {
       handleChoice(card);
