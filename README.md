@@ -1,7 +1,6 @@
 # Memory Game
 
-This project was created intended to practice some react fundamentals. It is part of The Net Ninja (Shaun Pelling) course but with some additional features
-added by myself. In the feature I'm going to update it with some other features as typescript and unit tests.
+This project was created intended to practice some react fundamentals. It is part of The Net Ninja (Shaun Pelling) course but with some additional features added by myself, including using TS in the code. In the feature I'm going to update it and include unit tests.
 
 Project deployed [here](https://csb-2i2o6v.netlify.app/)
 
