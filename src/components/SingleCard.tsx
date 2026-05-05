@@ -1,5 +1,6 @@
 import React from "react";
 import "./SingleCard.css";
+import { Card } from "../App";
 
 interface ISingleCardProps {
   card: Card;
@@ -7,12 +8,6 @@ interface ISingleCardProps {
   flipped: boolean;
   handleChoice: (card: Card) => void;
 }
-
-type Card = {
-  id: number;
-  matched: boolean;
-  src: string;
-};
 
 export const SingleCard: React.FC<ISingleCardProps> = ({
   card,
@@ -31,7 +26,7 @@ export const SingleCard: React.FC<ISingleCardProps> = ({
       <div className={flipped ? "flipped" : ""}>
         <img src={card.src} className="front" alt="card front" />
         <img
-          src="/img/cover.png"
+          src="img/cover.png"
           className="back"
           alt="card back"
           onClick={handleClick}

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { SingleCard } from "./components/SingleCard";
 import "./App.css";
 
-type Card = {
+export type Card = {
   id: number;
   matched: boolean;
   src: string;
@@ -11,32 +11,44 @@ type Card = {
 // Creating the arr of images outside the component because this will not change.
 // Also, putting outside avoids this arr been re-created every time the component is re-rendered
 const cardImages = [
-  { matched: false, src: "/img/helmet-1.png" },
-  { matched: false, src: "/img/potion-1.png" },
-  { matched: false, src: "/img/ring-1.png" },
-  { matched: false, src: "/img/scroll-1.png" },
-  { matched: false, src: "/img/shield-1.png" },
-  { matched: false, src: "/img/sword-1.png" },
+  { matched: false, src: "img/helmet-1.png" },
+  { matched: false, src: "img/potion-1.png" },
+  { matched: false, src: "img/ring-1.png" },
+  { matched: false, src: "img/scroll-1.png" },
+  { matched: false, src: "img/shield-1.png" },
+  { matched: false, src: "img/sword-1.png" },
 ];
 
 export const App: React.FC = () => {
   const [cards, setCards] = useState<Array<Card>>([]);
-  const [choiceOne, setChoiceOne] = useState<any>(null);
-  const [choiceTwo, setChoiceTwo] = useState<any>(null);
+  const [choiceOne, setChoiceOne] = useState<Card | null>(null);
+  const [choiceTwo, setChoiceTwo] = useState<Card | null>(null);
   const [disabled, setDisabled] = useState<boolean>(false);
   const [turns, setTurns] = useState<number>(0);
+  const [isShuffling, setIsShuffling] = useState<boolean>(false);
 
   // This function will do 3 things: 1-duplicate cardImgages using spread, shuffle it with .sort() and add an id with .map()
   const shuffleCards = (): void => {
-    const shuffledCards = [...cardImages, ...cardImages]
-      // If the substraction results in a negative number, cards won't change its positions. I  If it's positive, it will change.
-      .sort(() => Math.random() - 0.5)
-      .map((card) => ({ ...card, id: Math.random() }));
-
+    // 1. Start shuffling state and reset choices to trigger flip-back
+    setIsShuffling(true);
     setChoiceOne(null);
     setChoiceTwo(null);
-    setCards(shuffledCards);
-    setTurns(0);
+    setDisabled(true);
+
+    // 2. Set all existing cards to unmatched so they all flip back to covers
+    setCards((prev) => prev.map((card) => ({ ...card, matched: false })));
+
+    // 3. Wait for the flip animation (0.2s) before actually changing the images
+    setTimeout(() => {
+      const shuffledCards = [...cardImages, ...cardImages]
+        .sort(() => Math.random() - 0.5)
+        .map((card, index) => ({ ...card, id: index }));
+
+      setCards(shuffledCards);
+      setTurns(0);
+      setIsShuffling(false);
+      setDisabled(false);
+    }, 300);
   };
 
   const handleChoice = (card: Card) => {
@@ -85,11 +97,11 @@ export const App: React.FC = () => {
       <h1>Magic Match</h1>
       <button onClick={() => shuffleCards()}>New Game</button>
 
-      <div className="card-grid">
+      <div className={`card-grid ${isShuffling ? "shuffling" : ""}`}>
         {cards.map((card) => (
           <SingleCard
             card={card}
-            disabled={disabled}
+            disabled={disabled || card === choiceOne || card.matched}
             flipped={card === choiceOne || card === choiceTwo || card.matched}
             handleChoice={handleChoice}
             key={card.id}
