@@ -1,76 +1,91 @@
-# Memory Game
+### **Project deployed [here](https://fmarcio.github.io/memory-game)**
 
-This project was created intended to practice some react fundamentals. It is part of The Net Ninja (Shaun Pelling) course but with some additional features added by myself, including using TS in the code. In the feature I'm going to update it and include unit tests.
+![Memory Game Demo](public/img/memoryGameGif.gif)
 
-Project deployed [here](https://csb-2i2o6v.netlify.app/)
+# Magic Match - Memory Game
 
-# Getting Started with Create React App
+A polished, responsive memory matching game built with **React** and **TypeScript**. Test your memory by finding all matching pairs of magical artifacts in the fewest turns possible.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is inspired by The Net Ninja (Shaun Pelling) React course but with some additional features and code improvements added by myself. Gemini was used for helping debugging and fastening development.
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+- **Core Gameplay:** Smooth card flipping animations and matching logic.
+- **Game Progression:** Tracks the number of turns taken to complete the game.
+- **Robust Logic:**
+  - Prevents "cheating" via rapid double-clicking.
+  - Automatically disables card interaction during evaluation delays.
+- **Responsive Design:** Mobile-first approach using CSS Grid and media queries (optimized for desktop, tablet, and mobile).
+- **Developer Ready:** Includes a comprehensive unit test suite and modernized build tools.
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Framework:** React 17 (Upgraded to `react-scripts v5` for security and performance)
+- **Language:** TypeScript (Strict typing for robust code)
+- **Styling:** Vanilla CSS (Custom animations and transitions)
+- **Testing:** Jest & React Testing Library
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🚀 Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Node.js](https://nodejs.org/) (v17 or higher recommended)
+- npm (comes with Node.js)
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/magic-memory.git
+   ```
+2. Navigate to the project folder:
+   ```bash
+   cd magic-memory
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Available Scripts
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **`npm start`**: Runs the app in development mode at [http://localhost:3000](http://localhost:3000).
+- **`npm test`**: Launches the test runner in interactive watch mode.
+- **`npm run build`**: Builds the app for production to the `build` folder.
 
-### `npm run eject`
+## 🚀 Deployment
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This project is configured for easy deployment to **GitHub Pages**.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To deploy the app:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Ensure your changes are committed and pushed to your GitHub repository.
+2. Run the deployment script:
+   ```bash
+   npm run deploy
+   ```
+   This will automatically build the project and push it to a `gh-pages` branch on GitHub.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 🧪 Testing
 
-## Learn More
+The project includes a suite of unit tests to ensure the game mechanics are reliable. These tests cover:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Component rendering and initial state.
+- Card shuffling and state management.
+- Matching logic and turn handling.
+- Win conditions and UI transitions.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To run the tests:
 
-### Code Splitting
+```bash
+npm test -- --watchAll=false
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📝 Learning Objectives
 
-### Analyzing the Bundle Size
+This project served as a deep dive into:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **React State Management:** Handling complex state transitions with `useState` and `useEffect`.
+2. **TypeScript Integration:** Implementing custom types and interfaces for a safer development experience.
+3. **Dependency Management:** Upgrading legacy projects to modern standards (`Webpack 5`, `OpenSSL` compatibility).
+4. **Unit Testing:** Writing meaningful tests for interactive UI components.
