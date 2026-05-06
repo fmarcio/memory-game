@@ -16,20 +16,21 @@ This project is inspired by The Net Ninja (Shaun Pelling) React course but with 
   - Prevents "cheating" via rapid double-clicking.
   - Automatically disables card interaction during evaluation delays.
 - **Responsive Design:** Mobile-first approach using CSS Grid and media queries (optimized for desktop, tablet, and mobile).
-- **Developer Ready:** Includes a comprehensive unit test suite and modernized build tools.
+- **Modern Tooling:** Migrated from CRA to **Vite** and **React 18** for a lightning-fast development experience and optimized builds. Includes a comprehensive unit test suite using **Vitest**.
 
 ## 🛠️ Tech Stack
 
-- **Framework:** React 17 (Upgraded to `react-scripts v5` for security and performance)
+- **Framework:** React 18
+- **Bundler:** Vite
 - **Language:** TypeScript (Strict typing for robust code)
 - **Styling:** Vanilla CSS (Custom animations and transitions)
-- **Testing:** Jest & React Testing Library
+- **Testing:** Vitest & React Testing Library
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v17 or higher recommended)
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
 - npm (comes with Node.js)
 
 ### Installation
@@ -49,9 +50,9 @@ This project is inspired by The Net Ninja (Shaun Pelling) React course but with 
 
 ### Available Scripts
 
-- **`npm start`**: Runs the app in development mode at [http://localhost:3000](http://localhost:3000).
-- **`npm test`**: Launches the test runner in interactive watch mode.
-- **`npm run build`**: Builds the app for production to the `build` folder.
+- **`npm start`**: Runs the app in development mode using Vite.
+- **`npm test`**: Launches the Vitest runner.
+- **`npm run build`**: Builds the app for production to the `dist` folder.
 
 ## 🚀 Deployment
 
@@ -78,7 +79,7 @@ The project includes a suite of unit tests to ensure the game mechanics are reli
 To run the tests:
 
 ```bash
-npm test -- --watchAll=false
+npm test
 ```
 
 ## 📝 Learning Objectives
